@@ -19,6 +19,6 @@ In the following repository you will find:
 #### - Convolver Coefficients Directory:
   -   Contains several coefficient files for use with the integrated convolver filter in Camilla DSP.  Most of these sample files have been derived from impulse files wich are commonly used with Viper4Android application.  These files can produce all kinds of effects and can alter the sound dramatically.  Be careful with their use and check the overall gain of the effect (or keep your volume low) before applying them.
 #### - System Configurations Directory:
-  -   Contains several configration files required to integrate the various pieces of software, some scripts to help automate the startup, set initial filers, etc..
+  -   Contains several configration files required to integrate the various pieces of software, some scripts to help automate the startup, set initial filters, etc..
 
 More to follow as I get a bit of time to play and post.

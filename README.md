@@ -1,4 +1,4 @@
-# CamillaDSP Setup and FIR-Examples
+# CamillaDSP Configurations and FIR-Examples
 ## Example Filter Configuration and Convolver Coefficients
 
 This hub contains some example filter and convolver configurations for use withthe excellent Camilla DSP program.

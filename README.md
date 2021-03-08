@@ -1,9 +1,9 @@
-# Camilla-DSP---FIR-Examples
+# CamillaDSP Setup and FIR-Examples
 ## Example Filter Configuration and Convolver Coefficients
 
 This hub contains some example filter and convolver configurations for use withthe excellent Camilla DSP program.
 
-My basic system is made up of a Raspberry PI3 with an IQAudio DAC+ top hat piped into an Soundbar and Sub.  I found soudn quality of the soundbar and sub to be lacking somewhat and it needed some help at boththe top and bottom ends.  Tried some equalizer type apps but found the overall experience lacking somewhat. To that end, I put together this little project, now that soundbar sounds awesome (at least to my ears). 
+My basic system is made up of a Raspberry PI3 with an IQAudio DAC+ top hat piped into an soundbar and sub.  I found sound quality of the soundbar and sub to be lacking somewhat particularly as it pertains to music and thought it needed some help at both the top and bottom ends.  Tried some equalizer type apps but found the overall experience lacking somewhat. To that end, I put together this little project, now that soundbar sounds awesome (to my ears at least). 
 
 ### Software:
 The system is a mash up of the following:

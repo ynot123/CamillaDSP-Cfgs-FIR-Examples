@@ -1,14 +1,19 @@
 # CamillaDSP Configurations and FIR-Examples
 ## Example Filter Configuration and Convolver Coefficients
 
-This hub contains some example filter and convolver configurations for use withthe excellent Camilla DSP program.
+This hub contains some example filter and convolver configurations for use with the excellent Camilla DSP program.
 
 My basic system is made up of a Raspberry PI3 with an IQAudio DAC+ top hat piped into an soundbar and sub.  I found sound quality of the soundbar and sub to be lacking somewhat particularly as it pertains to music and thought it needed some help at both the top and bottom ends.  Tried some equalizer type apps but found the overall experience lacking somewhat. To that end, I put together this little project, now that soundbar sounds awesome (to my ears at least). 
 
 ### Software:
 The system is a mash up of the following:
   - Debian Buster lite for the PI3 - the OS
-  - Camilla DSP - the DSP engine c/w web page gui and plotting library
+  - Camilla DSP - the DSP engine c/w web page gui and plotting library  
+    - https://github.com/HEnquist/camilladsp  - Flexible linux IIR and FIR engine for crossovers, room correction, etc
+    - https://github.com/HEnquist/pycamilladsp  - Python library for handling the communication with CamillaDSP via a websocket
+    - https://github.com/HEnquist/camillagui  - Web based graphical interface to CamillaDSP
+    - https://github.com/HEnquist/camillagui-backend  - Backend server for camillagui
+    - https://github.com/HEnquist/pycamilladsp-plot  - Plotting tools for CamillaDSP
   - Squeezelite - the audio player of choice for my integrated home system 
 
 In the future, I may provide an image of my existing setup for common use but I feel the need to check on licensing, etc to see if that kind of thing is allowed first.  In the short term, I will provide some links to the software used and basic instructions on the setup if people are interested.

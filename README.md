@@ -24,7 +24,7 @@ The system is a mash up of the following:
 
 In the future, I may provide an image of my existing setup for common use but I feel the need to check on licensing, etc to see if that kind of thing is allowed first.  In the short term, I will provide some links to the software used and basic instructions on the setup if people are interested.
 
-In the following repository you will find:
+In this repository you will find:
 #### Filter Configurations Directory:
   -   Contains sample Camilla DSP configurations which include settings for sample rate, capture and playback devices, filter settings including gain, convolver, delay, biquad, etc, details for mixers and finally the pipeline details.
 #### Convolver Coefficients Directory:

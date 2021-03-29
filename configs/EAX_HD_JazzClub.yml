@@ -1,0 +1,72 @@
+devices:
+  adjust_period: 5
+  capture:
+    channels: 2
+    device: camilla_in
+    format: S32LE
+    retry_on_error: false
+    type: Alsa
+  capture_samplerate: 0
+  chunksize: 4096
+  enable_rate_adjust: true
+  enable_resampling: true
+  playback:
+    channels: 2
+    device: sound_out
+    format: S16LE
+    type: Alsa
+  queuelimit: 4
+  resampler_type: BalancedAsync
+  samplerate: 44100
+  silence_threshold: 0
+  silence_timeout: 0
+  target_level: 2048
+filters:
+  Convolver_L:
+    parameters:
+      filename: /home/pi/camilladsp/coeffs/EAX_HD_JazzClub_L_44100_32LE.raw
+      format: S32LE
+      read_bytes_lines: 0
+      skip_bytes_lines: 0
+      type: File
+    type: Conv
+  Convolver_R:
+    parameters:
+      filename: /home/pi/camilladsp/coeffs/EAX_HD_JazzClub_R_44100_32LE.raw
+      format: S32LE
+      read_bytes_lines: 0
+      skip_bytes_lines: 0
+      type: File
+    type: Conv
+  OverallGain:
+    parameters:
+      gain: 5
+      inverted: false
+      mute: false
+    type: Gain
+  clipgain_L:
+    parameters:
+      gain: 0
+      inverted: false
+      mute: false
+    type: Gain
+  clipgain_R:
+    parameters:
+      gain: 0
+      inverted: false
+      mute: false
+    type: Gain
+mixers: {}
+pipeline:
+- channel: 0
+  names:
+  - Convolver_L
+  - clipgain_L
+  - OverallGain
+  type: Filter
+- channel: 1
+  names:
+  - Convolver_R
+  - clipgain_R
+  - OverallGain
+  type: Filter

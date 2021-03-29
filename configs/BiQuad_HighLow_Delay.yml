@@ -1,0 +1,151 @@
+devices:
+  adjust_period: 5
+  capture:
+    channels: 2
+    device: camilla_in
+    format: S32LE
+    retry_on_error: false
+    type: Alsa
+  capture_samplerate: 0
+  chunksize: 4096
+  enable_rate_adjust: true
+  enable_resampling: true
+  playback:
+    channels: 2
+    device: sound_out
+    format: S16LE
+    type: Alsa
+  queuelimit: 4
+  resampler_type: BalancedAsync
+  samplerate: 44100
+  silence_threshold: 0
+  silence_timeout: 0
+  target_level: 2048
+filters:
+  Delay:
+    parameters:
+      delay: 40
+      unit: ms
+    type: Delay
+  High:
+    parameters:
+      freq: 7500
+      gain: 15
+      q: 0.25
+      type: Peaking
+    type: Biquad
+  Low:
+    parameters:
+      freq: 50
+      gain: 15
+      q: 0.25
+      type: Peaking
+    type: Biquad
+  OverallGain:
+    parameters:
+      gain: -10
+      inverted: false
+      mute: false
+    type: Gain
+  clipgain_L:
+    parameters:
+      gain: 0
+      inverted: false
+      mute: false
+    type: Gain
+  clipgain_R:
+    parameters:
+      gain: 0
+      inverted: false
+      mute: false
+    type: Gain
+mixers:
+  Mix1:
+    channels:
+      in: 2
+      out: 4
+    mapping:
+    - dest: 0
+      mute: false
+      sources:
+      - channel: 0
+        gain: -10
+        inverted: false
+        mute: false
+    - dest: 1
+      mute: false
+      sources:
+      - channel: 0
+        gain: -5
+        inverted: false
+        mute: false
+    - dest: 2
+      mute: false
+      sources:
+      - channel: 1
+        gain: -10
+        inverted: false
+        mute: false
+    - dest: 3
+      mute: false
+      sources:
+      - channel: 1
+        gain: -5
+        inverted: false
+        mute: false
+  Mix2:
+    channels:
+      in: 4
+      out: 2
+    mapping:
+    - dest: 0
+      mute: false
+      sources:
+      - channel: 0
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 0
+      mute: false
+      sources:
+      - channel: 1
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 1
+      mute: false
+      sources:
+      - channel: 2
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 1
+      mute: false
+      sources:
+      - channel: 3
+        gain: 0
+        inverted: false
+        mute: false
+pipeline:
+- name: Mix1
+  type: Mixer
+- channel: 0
+  names:
+  - Low
+  type: Filter
+- channel: 1
+  names:
+  - High
+  - Delay
+  type: Filter
+- channel: 2
+  names:
+  - Low
+  type: Filter
+- channel: 3
+  names:
+  - High
+  - Delay
+  type: Filter
+- name: Mix2
+  type: Mixer

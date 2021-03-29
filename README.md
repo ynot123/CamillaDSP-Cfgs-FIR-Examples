@@ -25,9 +25,9 @@ The system is a mash up of the following:
 In the future, I may provide an image of my existing setup for common use but I feel the need to check on licensing, etc to see if that kind of thing is allowed first.  In the short term, I will provide some links to the software used and basic instructions on the setup if people are interested.
 
 In this repository you will find:
-#### Filter Configurations Directory:
+#### Filter Configurations Directory (configs):
   -   Contains sample Camilla DSP configurations which include settings for sample rate, capture and playback devices, filter settings including gain, convolver, delay, biquad, etc, details for mixers and finally the pipeline details.
-#### Convolver Coefficients Directory:
+#### Convolver Coefficients Directory (coeffs):
   -   Contains several FIR coefficient files for use with the integrated convolver filter in Camilla DSP.  Most of these sample files have been derived from impulse files wich are commonly used with Viper4Android application.  These files can produce all kinds of effects and can alter the sound dramatically.  Be careful with their use and check the overall gain of the effect (or keep your volume low) before applying them.
   -   See Building_FIR.md document for a short how to.  The document outlines a fairly simple way to convert typical IRS wav files into FIR coefficient files. ## to do
 #### System Configurations Directory:
